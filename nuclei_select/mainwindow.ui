@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1209</width>
+    <height>753</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QSplitter" name="splitter">
+      <property name="frameShape">
+       <enum>QFrame::Panel</enum>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="opaqueResize">
+       <bool>false</bool>
+      </property>
+      <property name="handleWidth">
+       <number>8</number>
+      </property>
+      <property name="childrenCollapsible">
+       <bool>false</bool>
+      </property>
+      <widget class="QScrollArea" name="scrollArea">
+       <property name="frameShape">
+        <enum>QFrame::Box</enum>
+       </property>
+       <property name="verticalScrollBarPolicy">
+        <enum>Qt::ScrollBarAlwaysOn</enum>
+       </property>
+       <property name="horizontalScrollBarPolicy">
+        <enum>Qt::ScrollBarAlwaysOn</enum>
+       </property>
+       <property name="sizeAdjustPolicy">
+        <enum>QAbstractScrollArea::AdjustToContents</enum>
+       </property>
+       <widget class="FullImageView" name="fullImageView">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>16</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+       </widget>
+      </widget>
+      <widget class="MaskView" name="maskView" native="true">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>1</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1209</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionOpen_Directory"/>
+    <addaction name="actionSelect_Image"/>
+    <addaction name="separator"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuSelection">
+    <property name="title">
+     <string>Image</string>
+    </property>
+    <addaction name="actionNext_Image"/>
+    <addaction name="actionPrev_Image"/>
+    <addaction name="actionDelete_selection"/>
+    <addaction name="separator"/>
+    <addaction name="actionDisplay_outlines"/>
+    <addaction name="actionDisplay_rects"/>
+    <addaction name="actionDisplay_masks"/>
+    <addaction name="actionDisplay_hints"/>
+    <addaction name="actionSet_Mask_Color"/>
+    <addaction name="actionExport_current_crop_as"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuSelection"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionSelect_Image"/>
+   <addaction name="separator"/>
+   <addaction name="actionPrev_Image"/>
+   <addaction name="actionNext_Image"/>
+   <addaction name="actionDisplay_outlines"/>
+   <addaction name="actionDisplay_rects"/>
+   <addaction name="actionDisplay_masks"/>
+   <addaction name="actionDisplay_hints"/>
+   <addaction name="actionSet_Mask_Color"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionOpen_Directory">
+   <property name="text">
+    <string>Open Directory</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
+  <action name="actionNext_Image">
+   <property name="text">
+    <string>Next Image</string>
+   </property>
+   <property name="shortcut">
+    <string>N</string>
+   </property>
+  </action>
+  <action name="actionPrev_Image">
+   <property name="text">
+    <string>Prev Image</string>
+   </property>
+   <property name="shortcut">
+    <string>P</string>
+   </property>
+  </action>
+  <action name="actionSelect_Image">
+   <property name="text">
+    <string>Select Image</string>
+   </property>
+  </action>
+  <action name="actionDelete_selection">
+   <property name="text">
+    <string>Delete selection</string>
+   </property>
+   <property name="shortcut">
+    <string>Del</string>
+   </property>
+  </action>
+  <action name="actionDisplay_outlines">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Display outlines</string>
+   </property>
+  </action>
+  <action name="actionDisplay_rects">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Display rects</string>
+   </property>
+  </action>
+  <action name="actionDisplay_masks">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Display masks</string>
+   </property>
+  </action>
+  <action name="actionDisplay_hints">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Display hints</string>
+   </property>
+   <property name="shortcut">
+    <string>H</string>
+   </property>
+  </action>
+  <action name="actionSet_Mask_Color">
+   <property name="text">
+    <string>Set Mask Color</string>
+   </property>
+  </action>
+  <action name="actionExport_current_crop_as">
+   <property name="text">
+    <string>Export current crop as...</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>MaskView</class>
+   <extends>QWidget</extends>
+   <header>maskview.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>FullImageView</class>
+   <extends>QWidget</extends>
+   <header>fullimageview.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
